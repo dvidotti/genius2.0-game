@@ -2,7 +2,7 @@ let userPoints = 0;
 let samplers = [ 1, 2, 3, 4];
 let random4 = () => Math.round(Math.random() * 3);
 let showMelody = document.getElementById('show-melody');
-let melody = pic3Samplers(samplers);  
+let melody = picSamplers();  
 function startGame() {
   game.style.display = 'block';
 }
@@ -12,16 +12,39 @@ let game = document.getElementById('show-game');
 game.style.display ='none';
 
 // Build melody with 3 random elements and show it on the DOM
-function pic3Samplers(samplers) {
-  let newMel3 = [];
-  for ( let i = 0; i < 3; i += 1){
-    newMel3.push(samplers[random4()]);
-  }
-  showMelody.innerHTML = `${newMel3.join(' ')}`;
-  return newMel3;
+function picSamplers() {
+  let newMel = [];
+   if (userPoints < 3){
+     for ( let i = 0; i < 3; i += 1){
+       newMel.push(samplers[random4()]);
+      }
+       showMelody.innerHTML = `${newMel.join(' ')}`;
+       return newMel;
+      
+   } else if (userPoints < 5){ 
+     for ( let i = 0; i < 4; i += 1){
+        newMel.push(samplers[random4()]);
+      }
+        showMelody.innerHTML = `${newMel.join(' ')}`;
+        return newMel;
+
+   } else if (userPoints < 7){ 
+    for ( let i = 0; i < 5; i += 1){
+       newMel.push(samplers[random4()]);
+     }
+       showMelody.innerHTML = `${newMel.join(' ')}`;
+       return newMel;
+
+   } else if (userPoints < 8){ 
+    for ( let i = 0; i < 6; i += 1){
+       newMel.push(samplers[random4()]);
+     }
+       showMelody.innerHTML = `${newMel.join(' ')}`;
+       return newMel;
+   } else if (userPoints === 8)
+       return "YOU WIN"; 
 }
 
-// function to variable melody
 
 // Compare melodies created by random function with User guess info
 function compareMelodies() {
@@ -30,29 +53,8 @@ function compareMelodies() {
   if (parseInt(melody.join('')) === parseInt(userLevel1)) { 
      userPoints += 1;
      console.log('batman',userPoints);
-     if (userPoints === 5){
-     }
-    melody = pic3Samplers(samplers);  
+   melody = picSamplers();  
   } else { 
     console.log('Game Over');
   }
 }
-//console.log(compareMelodies());
-
-// Function that continue or end the game 
-//function levelOne (){
-//   let rightShoot = 0;
-//   if (compareMelodies() === true) {
-//     rightShoot += 1;
-//     return 'You are good';
-//   //} else if ( rightShoot < 10) {
-//     //melody()
-//  // } else if ( rightShoot >= 10) {
-//   //  levelTwo()
-//   } else return 'Game Over'
-    
-//   }
-//}
-
-// console.log(levelOne());
-
