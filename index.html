@@ -4,16 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
   <title>Genius</title>
 </head>
 <body>
   <button id="start-game" type ="button" onclick="startGame()"> Start Game </button>
   <div id="show-game">
-    <h1 id="show-melody"></h1>
-   
-     <label>Your Melody:</label> 
-      <input id="user-shoot">
-      <!--<button onclick="compareMelodies()">TESTAR</button>-->
+    <button id ="red-note" class="active" onclick="playNotaDo()"></button>
+    <button id ="yellow-note" class="active" onclick="playNotaMi()"></button>
+    <button id ="blue-note" class="active" onclick="playNotaSol()"></button>
+    <button id ="green-note" class="active" onclick="playNotaLa()"></button>
+  
+      <!-- <button onclick="compareMelodies()">TESTAR</button> -->
     </div>
   <script type="text/javascript" src="genius.js"></script>
 </body>

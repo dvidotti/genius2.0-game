@@ -1,1 +1,35 @@
+#show-game {
+  display: flex;
+  width: 70%;
+  height: 100px;
+  border: 1px solid red;
+  
+}
 
+#red-note {
+  width: 20%;
+  height: 100%;
+  background-color: red;
+  flex-grow: 1;
+}
+#yellow-note {
+  width: 20%;
+  height: 100%;
+  background-color: yellow;
+  flex-grow: 1;
+
+  
+}
+#blue-note {
+  width: 20%;
+  height: 100%;
+  background-color:blue;
+  flex-grow: 1;
+
+}
+#green-note {
+  width: 20%;
+  height: 100%;
+  background-color:green;
+  flex-grow: 1;
+}
