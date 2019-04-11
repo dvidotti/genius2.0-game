@@ -33,7 +33,10 @@
   flex-grow: 1;
 }
 
-.active {
+.red,
+.yellow,
+.blue,
+.green {
   opacity: 0.5;
 }
 
