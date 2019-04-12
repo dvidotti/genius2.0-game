@@ -1,3 +1,4 @@
+// Global Variables
 let userPoints = 0;
 const notes = ['c', 'e', 'g', 'a'];
 let counter = 0;
@@ -14,6 +15,8 @@ let startButton = document.getElementById('start-game');
 let gameFinish = false;
 let youWin = document.getElementById('you-win');
 let gameOver = document.getElementById('game-over');
+
+// Initial Elements Style
 game.style.display ='flex';
 gameOver.style.display ='none';
 youWin.style.display ='none';
@@ -22,6 +25,8 @@ yellowBtn.classList.remove('yellow');
 blueBtn.classList.remove('blue');
 greenBtn.classList.remove('green');
 
+
+// Start the game
 function startGame() {
    startButton.style.display = 'none';
    game.style.display = 'flex'; 
@@ -36,6 +41,7 @@ function startGame() {
   playMelody(); 
 }
 
+// Change buttons opacity while cliking
 function lightButton(z) {
   for ( let i = 0; i < playButton.length; i += 1){ 
       if (z === 'c'){ 
@@ -62,6 +68,7 @@ function lightButton(z) {
   }
 }
 
+// Answer the call from the button and play the note
 function playNote(note) { console.log(note);
   lightButton(note);
   melodyTry.push(note);
@@ -73,6 +80,7 @@ function playNote(note) { console.log(note);
 }
 
 
+// Create random melodies & control game levels
 function picSamplers(){
   if (gameFinish === false)
   if (userPoints <= 2){
@@ -97,13 +105,10 @@ function picSamplers(){
     userPoints =0;
     counter = 0;  
     youWin.style.display = 'flex';
-   // return console.log('YOU WIN');
   }
  }
 
-
-// cria as notas da melodia, usando a string (c, e, g, a), a cada loop pega a string da melodia newMel e push para audioSeq... dúvidas no segund 'for' Acho que o audioSeq[0] dispara a melodia, que por sua vez dispara as outras com o addEventeListener
-
+ // Play random melodie & Give opactiy to the keys while playing
 function playMelody() { 
   if (gameFinish === false){
   const audioSeq = [];
@@ -171,23 +176,18 @@ function playMelody() {
 }
 
 
-
+// Compare Melodies & Condition for game over
 function compareMelodies(){
   if(gameFinish === false){
   if (newMel.length === melodyTry.length){
-  //for (let i = 0; i < newMel.length; i += 1){
     if (JSON.stringify(newMel) !== JSON.stringify(melodyTry)) {
-      console.log(newMel, melodyTry);
       gameFinish === true;
       newMel = [];
       melodyTry = [];
       userPoints = 0;
       counter = 0;
       gameOver.style.display = 'flex';
-     // game.style.display ='none';
-    // return;
-    } else if (JSON.stringify(newMel) === JSON.stringify(melodyTry)){ 
-      console.log('entrou no else ')
+    } else if (JSON.stringify(newMel) === JSON.stringify    (melodyTry)){ 
       counter += 1;
       userPoints += 1;
       newMel = [];
