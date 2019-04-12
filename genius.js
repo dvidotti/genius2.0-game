@@ -5,10 +5,6 @@ let random4 = () => Math.round(Math.random() * 3);
 let melodyTry = [];
 let newMel = [];
 let playButton = document.querySelectorAll('.btn');
-// let redButton = document.querySelector('#red-note');
-// let yellowButton = document.querySelector('#yellow-note');
-// let blueButton = document.querySelector('#blue-note');
-// let greenButton = document.querySelector('#green-note');
 let game = document.getElementById('show-game');
 game.style.display ='none';
 
@@ -20,33 +16,39 @@ function startGame() {
     e.classList.remove('green');
    })
   game.style.display = 'block'; 
-  // playButton.classList.remove('red');
-  // yellowButton.classList.remove('yellow');
-  // blueButton.classList.remove('blue');
-  // greenButton.classList.remove('green');
-  //playButton.classList.remove('active');
   picSamplers();
   playMelody();
 }
 
-function playNote(note) { console.log(note);
+function lightButton(z) {
   for ( let i = 0; i < playButton.length; i += 1){ 
-      if (note === 'c'){ 
+      if (z === 'c'){ 
         playButton[0].classList.add('red')
         setTimeout(() => {  
           playButton[0].classList.remove('red')
         }, 500); 
-      } else if (note === 'e'){
-      playButton[1].classList.add('yellow')
-      } else if (note === 'g'){
-      playButton[2].classList.add('blue')
-      } else if (note === 'a'){
-      playButton[3].classList.add('green')
+      } else if (z === 'e'){
+        playButton[1].classList.add('yellow')
+        setTimeout(() => {  
+          playButton[1].classList.remove('yellow')
+        }, 500); 
+      } else if (z === 'g'){
+        playButton[2].classList.add('blue')
+        setTimeout(() => {  
+        playButton[2].classList.remove('blue')
+        }, 500); 
+      } else if (z === 'a'){
+        playButton[3].classList.add('green')
+        setTimeout(() => {  
+        playButton[3].classList.remove('green')
+        }, 500); 
       } 
   }
+}
 
-
-   melodyTry.push(note);
+function playNote(note) { console.log(note);
+  lightButton(note);
+  melodyTry.push(note);
   const noteAudio = new Audio(`${note}.mp3`);
   noteAudio.play();
   noteAudio.addEventListener('ended', () => {
@@ -84,12 +86,65 @@ function playMelody() {
   for (let i = 0; i < audioSeq.length; i += 1) {
     if (i < audioSeq.length - 1) {
       audioSeq[i].addEventListener('ended', () => {
+
         audioSeq[i + 1].play();
+        if (userPoints < 2){
+        if (audioSeq[i + 1].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/c.mp3'){ 
+          playButton[0].classList.add('red')
+          setTimeout(() => {  
+            playButton[0].classList.remove('red')
+          }, 500); 
+        } else if (audioSeq[i + 1].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/e.mp3'){
+          playButton[1].classList.add('yellow')
+          setTimeout(() => {  
+            playButton[1].classList.remove('yellow')
+          }, 500); 
+        } else if (audioSeq[i + 1].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/g.mp3'){
+          playButton[2].classList.add('blue')
+          setTimeout(() => {  
+          playButton[2].classList.remove('blue')
+          }, 500); 
+        } else if (audioSeq[i + 1].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/a.mp3'){
+          playButton[3].classList.add('green')
+          setTimeout(() => {  
+          playButton[3].classList.remove('green')
+          }, 500); 
+        }
+      } 
       });
     }
   }
+
+
   audioSeq[0].play();
+   if (userPoints < 2){
+    if (audioSeq[0].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/c.mp3'){ 
+      playButton[0].classList.add('red')
+      setTimeout(() => {  
+        playButton[0].classList.remove('red')
+      }, 500); 
+    } else if (audioSeq[0].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/e.mp3'){
+      playButton[1].classList.add('yellow')
+      setTimeout(() => {  
+        playButton[1].classList.remove('yellow')
+      }, 500); 
+    } else if (audioSeq[0].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/g.mp3'){
+      playButton[2].classList.add('blue')
+      setTimeout(() => {  
+      playButton[2].classList.remove('blue')
+      }, 500); 
+    } else if (audioSeq[0].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/a.mp3'){
+      playButton[3].classList.add('green')
+      setTimeout(() => {  
+      playButton[3].classList.remove('green')
+      }, 500); 
+    }
+  }
 }
+
+
+
+
 
 function compareMelodies(){
   console.log(newMel, melodyTry);
@@ -99,6 +154,7 @@ function compareMelodies(){
        console.log(`GAME OVER`)
     } if (newMel.length === melodyTry.length){ 
       counter += 1;
+      userPoints += 1;
       newMel = [];
       melodyTry = []; 
       picSamplers();
