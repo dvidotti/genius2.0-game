@@ -9,16 +9,18 @@
   <title>Genius</title>
 </head>
 <body>
+  <div class="background">
+    <button src="images/play-01-01.png" id="start-game" type ="button" onclick="startGame()"></button>
   <h1> GENIUS 2.0</h1>
-  <button id="start-game" type ="button" onclick="startGame()"> Start Game </button>
   <div id="show-game">
     <button id ="red-note" class="btn red" onclick="playNote('c')"></button>
     <button id ="yellow-note" class="btn yellow" onclick="playNote('e')"></button>
     <button id ="blue-note" class="btn blue" onclick="playNote('g')"></button>
     <button id ="green-note" class="btn green" onclick="playNote('a')"></button>
+    <button id="game-over" onclick="startGame()"></button>
+    <button id="you-win" onclick="startGame()"></button>
   </div>
-  <button id="you-win" onclick="startGame()">You Win - Play Again</button>
-  <button id="game-over" onclick="startGame()"> GAME OVER - TRY AGAIN</button>
   <script type="text/javascript" src="genius.js"></script>
+</div>
 </body>
 </html>

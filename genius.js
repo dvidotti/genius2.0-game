@@ -5,17 +5,26 @@ let random4 = () => Math.round(Math.random() * 3);
 let melodyTry = [];
 let newMel = [];
 let playButton = document.querySelectorAll('.btn');
+let redBtn = document.querySelector('.red');
+let yellowBtn = document.querySelector('.yellow');
+let blueBtn = document.querySelector('.blue');
+let greenBtn = document.querySelector('.green');
 let game = document.getElementById('show-game');
 let startButton = document.getElementById('start-game');
 let gameFinish = false;
 let youWin = document.getElementById('you-win');
 let gameOver = document.getElementById('game-over');
-game.style.display ='none';
+game.style.display ='flex';
 gameOver.style.display ='none';
+youWin.style.display ='none';
+redBtn.classList.remove('red');
+yellowBtn.classList.remove('yellow');
+blueBtn.classList.remove('blue');
+greenBtn.classList.remove('green');
 
 function startGame() {
-   game.style.display = 'flex'; 
    startButton.style.display = 'none';
+   game.style.display = 'flex'; 
    gameOver.style.display = 'none';
   playButton.forEach(e => {
     e.classList.remove('red');
@@ -86,8 +95,7 @@ function picSamplers(){
     melodyTry = [];
     newMel = [];
     userPoints =0;
-    counter = 0;
-    game.style.display ='none';
+    counter = 0;  
     youWin.style.display = 'flex';
    // return console.log('YOU WIN');
   }
@@ -176,7 +184,7 @@ function compareMelodies(){
       userPoints = 0;
       counter = 0;
       gameOver.style.display = 'flex';
-      game.style.display ='none';
+     // game.style.display ='none';
     // return;
     } else if (JSON.stringify(newMel) === JSON.stringify(melodyTry)){ 
       console.log('entrou no else ')
