@@ -7,18 +7,22 @@ let newMel = [];
 let playButton = document.querySelectorAll('.btn');
 let game = document.getElementById('show-game');
 let startButton = document.getElementById('start-game');
+let gameFinish = false;
+let youWin = document.getElementById('you-win');
 let gameOver = document.getElementById('game-over');
 game.style.display ='none';
+gameOver.style.display ='none';
 
 function startGame() {
+   game.style.display = 'flex'; 
+   startButton.style.display = 'none';
+   gameOver.style.display = 'none';
   playButton.forEach(e => {
     e.classList.remove('red');
     e.classList.remove('yellow');
     e.classList.remove('blue');
     e.classList.remove('green');
    })
-  game.style.display = 'flex'; 
-  startButton.style.display = 'none';
   picSamplers();
   playMelody(); 
 }
@@ -55,46 +59,56 @@ function playNote(note) { console.log(note);
   const noteAudio = new Audio(`${note}.mp3`);
   noteAudio.play();
   noteAudio.addEventListener('ended', () => {
-    compareMelodies();
+  compareMelodies();
   });
 }
 
 
 function picSamplers(){
+  if (gameFinish === false)
   if (userPoints <= 2){
    for (let i = 0; i < 3; i += 1) {
      newMel.push(notes[random4()]);
     } 
-} if (userPoints > 2 &&  userPoints <= 4){
+} else if (userPoints > 2 &&  userPoints <= 4){
     for (let i = 0; i < 5; i += 1) {
      newMel.push(notes[random4()]);
     }
-  } if (userPoints >= 5 && userPoints <= 6){
+  } else if (userPoints >= 5 && userPoints <= 6){
      for (let i = 0; i < 7; i += 1) {
       newMel.push(notes[random4()]);
      }
-  } if (userPoints >= 7 && userPoints < 9){
+  } else if (userPoints >= 7 && userPoints < 9){
      for (let i = 0; i < 3; i += 1) {
       newMel.push(notes[random4()]);
      } 
-  } if (userPoints === 9) {
-    return console.log('YOU WIN');
+  } else if (userPoints === 9) {
+    melodyTry = [];
+    newMel = [];
+    userPoints =0;
+    counter = 0;
+    game.style.display ='none';
+    youWin.style.display = 'flex';
+   // return console.log('YOU WIN');
   }
-}
+ }
+
 
 // cria as notas da melodia, usando a string (c, e, g, a), a cada loop pega a string da melodia newMel e push para audioSeq... dúvidas no segund 'for' Acho que o audioSeq[0] dispara a melodia, que por sua vez dispara as outras com o addEventeListener
 
 function playMelody() { 
+  if (gameFinish === false){
   const audioSeq = [];
   for (let i = 0; i < newMel.length; i += 1) {
     const note = new Audio(`${newMel[i]}.mp3`);
     audioSeq.push(note);
   }
+
   for (let i = 0; i < audioSeq.length; i += 1) {
     if (i < audioSeq.length - 1) {
       audioSeq[i].addEventListener('ended', () => {
-
         audioSeq[i + 1].play();
+
         if (userPoints <=7){
         if (audioSeq[i + 1].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/c.mp3'){ 
           playButton[0].classList.add('red')
@@ -121,8 +135,6 @@ function playMelody() {
       });
     }
   }
-
-
   audioSeq[0].play();
    if (userPoints <= 7){
     if (audioSeq[0].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/c.mp3'){ 
@@ -147,31 +159,35 @@ function playMelody() {
       }, 500); 
     }
   }
+  }
 }
 
 
-let gameFinish = false;
 
 function compareMelodies(){
-  console.log(newMel, melodyTry);
+  if(gameFinish === false){
   if (newMel.length === melodyTry.length){
-   for (let i = 0; i < newMel.length; i += 1)
-      if (newMel[i] !== melodyTry[i]) {
-        newMel = [];
-        melodyTry = [];
-        userPoints = 0;
-        counter = 0;
-        gameOver.style.display = 'flex';
-        game.style.display ='none';
-        
-    } if (newMel.length === melodyTry.length){ 
+  //for (let i = 0; i < newMel.length; i += 1){
+    if (JSON.stringify(newMel) !== JSON.stringify(melodyTry)) {
+      console.log(newMel, melodyTry);
+      gameFinish === true;
+      newMel = [];
+      melodyTry = [];
+      userPoints = 0;
+      counter = 0;
+      gameOver.style.display = 'flex';
+      game.style.display ='none';
+    // return;
+    } else if (JSON.stringify(newMel) === JSON.stringify(melodyTry)){ 
+      console.log('entrou no else ')
       counter += 1;
       userPoints += 1;
       newMel = [];
       melodyTry = []; 
       picSamplers();
       setTimeout(playMelody,1000);  
-    } 
- }
+  } 
+  }
+}
 }
 
