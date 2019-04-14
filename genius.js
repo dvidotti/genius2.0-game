@@ -123,8 +123,9 @@ function playMelody() {
         audioSeq[i + 1].play();
 
         if (userPoints <=7){
+           console.log(audioSeq[i+1].src)
         if (audioSeq[i + 1].src === 'simon-game/c.mp3'){ 
-           console.log([i+1]);
+         
           playButton[0].classList.add('red')
           setTimeout(() => {  
             playButton[0].classList.remove('red')
