@@ -6,7 +6,7 @@ Welcome to Genius2.0 !!!
 
 ## Installation
 
-https://github.com/dvidotti/simon-game.git
+https://github.com/dvidotti/genius2.0-game.git
 ```bash
 run index.html
 ```
