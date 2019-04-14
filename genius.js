@@ -123,7 +123,7 @@ function playMelody() {
         audioSeq[i + 1].play();
 
         if (userPoints <=7){
-        if (audioSeq[i + 1].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/c.mp3'){ 
+        if (audioSeq[i + 1].src === 'file:///dvidotti/simon-game/c.mp3'){ 
           playButton[0].classList.add('red')
           setTimeout(() => {  
             playButton[0].classList.remove('red')
