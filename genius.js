@@ -124,23 +124,23 @@ function playMelody() {
 
         if (userPoints <=7){
            console.log(audioSeq[i+1].src)
-        if (audioSeq[i + 1].src === 'simon-game/c.mp3'){ 
+        if (audioSeq[i + 1].src === 'c.mp3'){ 
          
           playButton[0].classList.add('red')
           setTimeout(() => {  
             playButton[0].classList.remove('red')
           }, 500); 
-        } else if (audioSeq[i + 1].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/e.mp3'){
+        } else if (audioSeq[i + 1].src === 'e.mp3'){
           playButton[1].classList.add('yellow')
           setTimeout(() => {  
             playButton[1].classList.remove('yellow')
           }, 500); 
-        } else if (audioSeq[i + 1].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/g.mp3'){
+        } else if (audioSeq[i + 1].src === 'g.mp3'){
           playButton[2].classList.add('blue')
           setTimeout(() => {  
           playButton[2].classList.remove('blue')
           }, 500); 
-        } else if (audioSeq[i + 1].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/a.mp3'){
+        } else if (audioSeq[i + 1].src === 'a.mp3'){
           playButton[3].classList.add('green')
           setTimeout(() => {  
           playButton[3].classList.remove('green')
@@ -152,22 +152,22 @@ function playMelody() {
   }
   audioSeq[0].play();
    if (userPoints <= 7){
-    if (audioSeq[0].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/c.mp3'){ 
+    if (audioSeq[0].src === 'c.mp3'){ 
       playButton[0].classList.add('red')
       setTimeout(() => {  
         playButton[0].classList.remove('red')
       }, 500); 
-    } else if (audioSeq[0].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/e.mp3'){
+    } else if (audioSeq[0].src === 'e.mp3'){
       playButton[1].classList.add('yellow')
       setTimeout(() => {  
         playButton[1].classList.remove('yellow')
       }, 500); 
-    } else if (audioSeq[0].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/g.mp3'){
+    } else if (audioSeq[0].src === 'g.mp3'){
       playButton[2].classList.add('blue')
       setTimeout(() => {  
       playButton[2].classList.remove('blue')
       }, 500); 
-    } else if (audioSeq[0].src === 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projetc1/a.mp3'){
+    } else if (audioSeq[0].src === 'a.mp3'){
       playButton[3].classList.add('green')
       setTimeout(() => {  
       playButton[3].classList.remove('green')
