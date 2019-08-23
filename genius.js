@@ -154,7 +154,6 @@ function playMelody() {
     
     if (audioSeq.length !== 0) {
       audioSeq[0].play();
-      console.log(audioSeq[0].src);
       if (userPoints <= 7) {
         switch (audioSeq[0].src) {
           case 'https://dvidotti.github.io/genius2.0-game/c.mp3':
