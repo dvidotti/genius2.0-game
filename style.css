@@ -1,7 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #show-game {
+  position:relative;
   display: flex;
-  width: 85%;
-  height: 300px;
+  width: 65%;
+  height: 40vh;
   margin: 50px auto;
   border: 15px solid black
   
@@ -14,6 +20,7 @@
   border: 3px solid black;
   flex-grow: 1;
 }
+
 #yellow-note {  
   width: 20%;
   height: 100%;
@@ -47,46 +54,43 @@
 }
 
 #start-game {
-  background-image: url("images/play-01-01.png");
-  background-repeat: no-repeat;
-  background-size: 40%;
-  background-color: transparent;
   display: block;
-  width: 35%; 
-  height: 200px;
-  text-align: center;
-  margin: 190px 480px;  
+  width: 20%;
+  margin: auto;
   font-size: 5em;
-  font-family: Arial, Helvetica, sans-serif;  
+  font-family: Arial, Helvetica, sans-serif;
   position: absolute;
+  left: 43%;
+  top: 40%;
+  bottom: 40%;
   border: 1px solid transparent;
 }
-
 
 h1 {
   margin-top: 30px;
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 4em; 
+  font-size: 8vw; 
 }
 
-#game-over {
-  display: none; 
+#game-over, #you-win {
+  display: block;
   background-size: 100% auto;
   background-color: transparent;
   background-repeat: no-repeat;
-  width: 50%;
-  height: 180px;
-  margin: 60px 160px;
-  background-image: url('images/gameOver_play-01.png');
-  /*font-family: Arial, Helvetica, sans-serif;*/
+  width: 60%;
   position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  align-items: center;
   border: 1px solid transparent;
-  /*font-weight: bolder;*/
 }
 
 
-
+/* 
 #you-win   {
   display: none; 
   background-size: 100% auto;
@@ -96,9 +100,8 @@ h1 {
   height: 180px;
   margin: 60px 160px;
   background-image: url('images/youwin_640X180-01.png');
-  /*font-family: Arial, Helvetica, sans-serif;*/
   position: absolute;
-  border: 1px solid transparent;
+  border: 1px solid transparent; */
 }
 
 .background {
