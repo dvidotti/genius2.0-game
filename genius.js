@@ -129,19 +129,19 @@ function playMelody() {
       audioSeq[i].addEventListener('ended', () => { audioSeq[i + 1].play();
         if (userPoints <= 7) { // => Don't let key opacity changes in last round
           switch (audioSeq[i + 1].src) {
-            case 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projects/Genius2.0/c.mp3':
+            case 'https://dvidotti.github.io/genius2.0-game/c.mp3':
                playButton[0].classList.add('red')
                setTimeout(() => { playButton[0].classList.remove('red')}, 500); 
                break;
-            case 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projects/Genius2.0/e.mp3':
+            case 'https://dvidotti.github.io/genius2.0-game/e.mp3':
                playButton[1].classList.add('yellow')
                setTimeout(() => { playButton[1].classList.remove('yellow')}, 500); 
                break;
-            case 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projects/Genius2.0/g.mp3':
+            case 'https://dvidotti.github.io/genius2.0-game/g.mp3':
                playButton[2].classList.add('blue')
                setTimeout(() => { playButton[2].classList.remove('blue')}, 500); 
                break;
-            case 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projects/Genius2.0/a.mp3':
+            case 'https://dvidotti.github.io/genius2.0-game/a.mp3':
                playButton[3].classList.add('green')
                setTimeout(() => { playButton[3].classList.remove('green')}, 500); 
                break;
@@ -156,19 +156,19 @@ function playMelody() {
       audioSeq[0].play();
       if (userPoints <= 7) {
         switch (audioSeq[0].src) {
-          case 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projects/Genius2.0/c.mp3':
+          case 'https://dvidotti.github.io/genius2.0-game/c.mp3':
             playButton[0].classList.add('red')
             setTimeout(() => { playButton[0].classList.remove('red')}, 500); 
             break;
-          case 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projects/Genius2.0/e.mp3':
+          case 'https://dvidotti.github.io/genius2.0-game/e.mp3':
             playButton[1].classList.add('yellow')
             setTimeout(() => { playButton[1].classList.remove('yellow')}, 500); 
             break;
-          case 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projects/Genius2.0/g.mp3':
+          case 'https://dvidotti.github.io/genius2.0-game/g.mp3':
             playButton[2].classList.add('blue')
             setTimeout(() => { playButton[2].classList.remove('blue')}, 500); 
             break;
-          case 'file:///Users/danilovidotti/Documents/CODE%20PROJECTS/ironhack/Projects/Genius2.0/a.mp3':
+          case 'https://dvidotti.github.io/genius2.0-game/a.mp3':
             playButton[3].classList.add('green')
             setTimeout(() => { playButton[3].classList.remove('green')}, 500); 
             break;
