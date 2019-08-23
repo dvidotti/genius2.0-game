@@ -1,21 +1,19 @@
-# Foobar
+# Genius 2.0
 
 Welcome to Genius2.0 !!!
-=> Challenge  your memory and music perception.
+=> A game to test your memory and music perception
 
 
-## Installation
+## Have fun and try it
 
-https://github.com/dvidotti/genius2.0-game.git
-```bash
-run index.html
-```
+https://dvidotti.github.io/genius2.0-game/
 
-## Usage
 
-=> Just press the play button and be ready to memorize the          melody.
+## Instructions
 
-= >After hearing the melody,  use your mouse to play it in the colorful keys.
+=> Just press the play button and be ready to memorize the melody.
+
+= >After hearing the melody,  press the same keys related to the sounds.
 
 = >The 2.0 Version counts with 4 levels
 - Level 1 - Melody with 3 notes.
@@ -28,7 +26,6 @@ run index.html
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+No license at all
