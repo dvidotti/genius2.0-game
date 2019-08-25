@@ -15,7 +15,7 @@ https://dvidotti.github.io/genius2.0-game/
 
 = >After hearing the melody,  press the same keys related to the sounds.
 
-= >The 2.0 Version counts with 4 levels
+= >The 2.0 Version with 4 levels
 - Level 1 - Melody with 3 notes.
 - Level 2 - Melody with 5 notes.
 - Level 3 - Melody with 7 notes.
