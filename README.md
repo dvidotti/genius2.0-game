@@ -8,6 +8,8 @@ Welcome to Genius2.0 !!!
 
 https://dvidotti.github.io/genius2.0-game/
 
+![Genius -Home](images/Home.png)
+
 
 ## Instructions
 
